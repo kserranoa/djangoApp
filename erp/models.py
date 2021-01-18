@@ -9,6 +9,7 @@ class Employee(models.Model):
     date_created = models.DateTimeField(auto_now=True,verbose_name='fechaCreacion')
     date_updated = models.DateTimeField(auto_now_add=True)
     age = models.PositiveIntegerField(default=0)
+    gender = models.CharField(max_length=50)
     salary = models.DecimalField(default=0.00, max_digits= 9, decimal_places=2)
     state = models.BooleanField(default=True)
     avatar = models.ImageField(upload_to='avatar')
