@@ -1,6 +1,18 @@
 from django.db import models
 from datetime import datetime
 
+class Type(models.Model):
+    name = models.CharField(max_length=190, verbose_name='Tipo')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Tipo'
+        verbose_name_plural = 'Tipos'
+        db_table = 'Tipos'
+        ordering = ['id']
+
 # Create your models here.
 class Employee(models.Model):
     names = models.TextField(verbose_name='Nombres')
@@ -15,11 +27,11 @@ class Employee(models.Model):
     avatar = models.ImageField(upload_to='avatar')
     cvitae = models.FileField(upload_to='cvitae%Y%m%d')
 
-def __str__(self):
-    return self.names
+    def __str__(self):
+        return self.names
 
-class Meta:
-    verbose_name = 'Empleado'
-    verbose_name_plural = 'Empleados'
-    db_table = 'empleado'
-    ordering = ['id']
+    class Meta:
+        verbose_name = 'Empleado'
+        verbose_name_plural = 'Empleados'
+        db_table = 'empleado'
+        ordering = ['id']
