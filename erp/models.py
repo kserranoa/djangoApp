@@ -10,3 +10,13 @@ class Employee(models.Model):
     date_updated = models.DateTimeField(auto_now_add=True)
     age = models.PositiveIntegerField(default=0)
     salary = models.DecimalField(default=0.00, max_digits= 9, decimal_places=2)
+    state = models.BooleanField(default=True)
+    avatar = models.ImageField(upload_to='avatar')
+    cvitae = models.FileField(upload_to='cvitae%Y%m%d')
+
+def __str__(self):
+    return self.names
+
+class Meta:
+    verbose_name = 'Empleado'
+    verbose_name_plural = 'Empleados'
