@@ -20,3 +20,5 @@ def __str__(self):
 class Meta:
     verbose_name = 'Empleado'
     verbose_name_plural = 'Empleados'
+    db_table = 'empleado'
+    ordering = ['id']
